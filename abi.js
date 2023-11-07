@@ -1,4 +1,4 @@
-let contractAddress = "0x53cd78d68413D5BfB51F1991d4fAcB8ad37F3154"
+let contractAddress = "0xb70324Ef1E257eC425cD0DC153126e03C29cc3B9"
 
 let contractABI = [
 	{
@@ -220,6 +220,25 @@ let contractABI = [
 			}
 		],
 		"name": "MetadataUpdate",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_tokenUri",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "MintEvent",
 		"type": "event"
 	},
 	{

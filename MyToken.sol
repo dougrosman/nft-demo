@@ -11,6 +11,8 @@ contract MyToken is ERC721, ERC721URIStorage, ERC721Burnable {
     // we need this so we can easily convert numbers into strings
     using Strings for uint256;
 
+    event MintEvent(string _tokenUri, uint _tokenId);
+
     constructor()
         ERC721("MyToken", "MTK")
     {}
@@ -23,11 +25,12 @@ contract MyToken is ERC721, ERC721URIStorage, ERC721Burnable {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, tokenId.toString());
+
+        // when we mint the token, emit an event that tells us
+        // the URI and tokenId of our new token
+        emit MintEvent(tokenURI(tokenId), tokenId);
     }
 
-
-
-    
 
     // The following functions are overrides required by Solidity.
 
