@@ -15,6 +15,11 @@ async function main() {
 
     /////// ADD YOUR CODE BELOW THIS LINE ///////
 
+    const myAddress = await signer.getAddress();
+    console.log(myAddress);
 
-    
+    // mint an NFT when the user hits "mint" button
+    mintButton.addEventListener("click", function(){
+        contractWithSigner.safeMint(myAddress)
+    })
 }
